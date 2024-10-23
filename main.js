@@ -192,3 +192,26 @@ function getYearWord(years) {
 }
 
 document.addEventListener('DOMContentLoaded', updatePartnerCards);
+
+// Добавьте этот код в конец файла main.js
+function openImageModal(src, alt) {
+    var modal = document.getElementById("imageModal");
+    var modalImg = document.getElementById("modalImage");
+    var captionText = document.getElementById("imageCaption");
+    modal.style.display = "block";
+    modalImg.src = src;
+    captionText.innerHTML = alt;
+}
+
+var modal = document.getElementById("imageModal");
+var span = document.getElementsByClassName("close")[0];
+
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
