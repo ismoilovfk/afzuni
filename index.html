@@ -32,11 +32,12 @@
         <main>
             <section id="hero">
                 <div class="hero-content">
-                    <h1>Откройте для себя<br>рынок Таджикистана</h1>
-                    <p>Afzuni - качественная дистрибуция</p>
-                    <a href="#contact" class="cta-button">Начать сотрудничество</a>
+                    <h1>Надежный дистрибьютор в Таджикистане</h1>
+                    <p>Afzuni — путь к изобилию  и процветанию</p>
+                    <a href="#contact" class="cta-button">Свяжитесь с нами</a>
                 </div>
             </section>
+            
 
             <section id="about">
                 <div class="container">
@@ -95,49 +96,41 @@
                         <div class="partner-card">
                             <a href="partners/martin.html">
                                 <img src="images/martin-logo.jpg" alt="Мартин">
-                                <h3>Мартин</h3>
                             </a>
                         </div>
                         <div class="partner-card">
                             <a href="partners/dyadya-vanya.html">
                                 <img src="images/vanya.png" alt="dyadya-vanya">
-                                <h3>ДЯДЯ ВАНЯ</h3>
                             </a>
                         </div>
                         <div class="partner-card">
                             <a href="partners/vorontsovskie.html">
                                 <img src="images/voron.png" alt="voron">
-                                <h3>Воронцовские</h3>
                             </a>
                         </div>
                         <div class="partner-card stamba-card">
                             <a href="partners/stamba.html">
                                 <img src="images/stamba.png" alt="Stamba">
-                                <h3>Stamba</h3>
                             </a>
                         </div>
                         <div class="partner-card">
                             <a href="partners/pasteroni.html">
                                 <img src="images/pasteroni.png" alt="pasteroni">
-                                <h3>Pasteroni</h3>
                             </a>
                         </div>
                         <div class="partner-card">
                             <a href="partners/sibbalt.html">
                                 <img src="images/sibbalt.png" alt="sibbalt">
-                                <h3>Sibbalt</h3>
                             </a>
                         </div>
                         <div class="partner-card">
-                            <a href="partners/adidas.html">
-                                <img src="images/adidas-logo.jpg" alt="Adidas">
-                                <h3>Adidas</h3>
+                            <a href="partners/sibyksys.html">
+                                <img src="images/sibyksys.png" alt="sibyksys">
                             </a>
                         </div>
                         <div class="partner-card">
-                            <a href="partners/unilever.html">
-                                <img src="images/unilever-logo.jpg" alt="Unilever">
-                                <h3>Unilever</h3>
+                            <a href="partners/pamir_aqua.html">
+                                <img src="images/pomir_aqua.jpg" alt="pamir_aqua">
                             </a>
                         </div>
                     </div>
@@ -153,7 +146,7 @@
                             <p><i class="fas fa-phone"></i> +992 111-222-777</p>
                             <p><i class="fas fa-envelope"></i> info@afzuni.ru</p>
                         </div>
-                        <form class="contact-form">
+                        <form class="contact-form" id="contactForm">
                             <input type="text" placeholder="Ваше имя" required>
                             <input type="email" placeholder="Ваш email" required>
                             <textarea placeholder="Ваше сообщение" required></textarea>
@@ -162,6 +155,41 @@
                     </div>
                 </div>
             </section>
+            <style>
+                /* Добавляем стили для формы */
+                .contact-form {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                }
+                .contact-form input,
+                .contact-form textarea {
+                    padding: 10px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    font-size: 16px;
+                }
+                .contact-form button {
+                    background-color: #007bff;
+                    color: white;
+                    border: none;
+                    padding: 10px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-size: 16px;
+                }
+                .contact-form button:hover {
+                    background-color: #0056b3;
+                }
+            </style>
+            <script>
+                // Валидация формы перед отправкой
+                document.getElementById('contactForm').addEventListener('submit', function(event) {
+                    event.preventDefault(); // Предотвращаем отправку формы
+                    alert('Спасибо за ваше сообщение! Мы свяжемся с вами в ближайшее время.'); // Сообщение об успешной отправке
+                    this.reset(); // Сбрасываем форму
+                });
+            </script>
         </main>
 
         <footer>

@@ -6,6 +6,106 @@
     <title>Мартин - Партнер Afzuni</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* Button styles */
+        .product-types button {
+            background-color: #007BFF; /* Blue background */
+            color: white; /* White text */
+            border: none; /* No border */
+            padding: 10px 20px; /* Padding for the button */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s; /* Smooth transition */
+        }
+
+        .product-types button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        .product-types button.active {
+            background-color: #0056b3; /* Active button color */
+            color: white; /* White text */
+        }
+        /* Button styles */
+        .product-types button {
+            background-color: #007BFF; /* Blue background */
+            color: white; /* White text */
+            border: none; /* No border */
+            padding: 10px 20px; /* Padding for the button */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s; /* Smooth transition */
+        }
+
+        .product-types button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        .product-types button.active {
+            background-color: #0056b3; /* Active button color */
+            color: white; /* White text */
+        }
+
+        .company-advantages {
+            background: #ffffff; /* Белый фон для раздела */
+            padding: 40px; /* Увеличенные отступы вокруг раздела */
+            border-radius: 10px; /* Закругленные углы */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Тень для эффекта поднятия */
+            margin-top: 30px; /* Отступ сверху */
+            text-align: center; /* Центрирование текста */
+        }
+
+        .company-advantages h2 {
+            color: #e63946; /* Цвет заголовка */
+            font-size: 2.5em; /* Увеличенный размер шрифта */
+            margin-bottom: 20px; /* Отступ снизу */
+            font-weight: bold; /* Жирный шрифт */
+        }
+
+        .company-advantages ul {
+            list-style-type: none; /* Убираем маркеры списка */
+            padding: 0; /* Убираем отступы */
+            display: flex; /* Используем flexbox для выравнивания */
+            justify-content: space-around; /* Равномерное распределение элементов */
+            flex-wrap: wrap; /* Перенос лементов на новую строку */
+        }
+
+        .company-advantages li {
+            margin: 15px; /* Отступ между элементами списка */
+            padding: 20px; /* Увеличенные отступы внутри элемента списка */
+            border-left: 4px solid #e63946; /* Левый бордер для выделения */
+            border-radius: 8px; /* Закругленные углы */
+            transition: transform 0.3s, box-shadow 0.3s; /* Плавный эффект при наведении */
+            width: 250px; /* Фиксированная ширина для элементов */
+            text-align: left; /* Выравнивание текста влево */
+        }
+
+        .company-advantages li:hover {
+            transform: translateY(-5px); /* Подъем элемента при наведении */
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Тень при наведении */
+        }
+
+        .company-advantages strong {
+            color: #333; /* Цвет текста для подзаголовков */
+            font-size: 1.5em; /* Увеличенный размер шрифта для подзаголовков */
+        }
+
+        .company-advantages p {
+            margin: 10px 0 0; /* Отступы для описания */
+            color: #555; /* Цвет текста для описания */
+            line-height: 1.6; /* Высота строки для лучшей читаемости */
+        }
+
+        .partner-description {
+            font-size: 1.2em; /* Увеличенный размер шрифта */
+            font-weight: bold; /* Жирный шрифт */
+            color: #333; /* Цвет текста */
+            line-height: 1.6; /* Высота строки для лучшей читаемости */
+            margin: 20px 0; /* Отступы сверху и снизу */
+            text-align: center; /* Центрирование текста */
+        }
+    </style>
 </head>
 <body>
     <div class="content-wrapper">
@@ -14,7 +114,6 @@
                 <div class="logo-container">
                     <a href="../index.html" class="logo-link">
                         <img src="../images/Afzni-logo.png" alt="Afzuni Logo" class="logo large-logo" loading="lazy">
-                        <h1></h1>
                     </a>
                 </div>
                 <nav>
@@ -29,279 +128,200 @@
         </header>
 
         <main>
-            <section class="partner-page">
+            <section class="partner-page"></section>
                 <div class="container">
                     <div class="partner-info-header" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-                        <a href="https://martin.ru" target="_blank" rel="noopener noreferrer" style="text-align: center;">
-                            <img src="../images/martin-logo.jpg" alt="Логотип Мартин" style="max-width: 100%; height: auto;" loading="lazy">
+                        <h1 style="text-align: center;"></h1>
+                    </div>
+                    <div style="text-align: center;">
+                        <a href="https://martin.su" target="_blank" rel="noopener noreferrer">
+                            <img src="../images/martin-logo.jpg" alt="Логотип Stamba" style="max-width: 100%; height: auto;" loading="lazy">
                         </a>
-                        <h1></h1>
                     </div>
                     <p class="partner-description">
-                        Мартин - ведущий производитель кондитерских изделий в России. Компания славится своими инновационными подходами и высоким качеством продукции.
+                        За годы существования компании «МАРТИН» наша продукция получила признание как со стороны экспертов, так и со стороны потребителей во многих уголках мира. Мы предлагаем заказчикам продукцию только собственного производства, которой по праву можем гордиться. Основополагающие принципы нашей работы — предельная прозрачность сделок, обеспечение высококлассного сервиса и доброжелательное отношение к партнёрам.
                     </p>
+                    <section class="company-advantages">
+                        <h2>Преимущества компании</h2>
+                        <ul style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+                            <li style="flex: 1; margin: 10px;">
+                                <strong>Доверие покупателей</strong>
+                                <p>Высокие требования к качеству выпускаемой продукции позволяют удовлетворить запросы даже самых требовательных потребителей.</p>
+                            </li>
+                            <li style="flex: 1; margin: 10px;">
+                                <strong>Собственное сырье</strong>
+                                <p>Профессиональные технологии и собственный отдел контроля производства задействованы в процессе подготовки исходного сырья.</p>
+                            </li>
+                            <li style="flex: 1; margin: 10px;">
+                                <strong>Технологичное производство</strong>
+                                <p>Современное оборудование, высокая квалификация персонала и внедрение инновационных систем позволяют обеспечить надежную технологию производства.</p>
+                            </li>
+                            <li style="flex: 1; margin: 10px;">
+                                <strong>Контроль качества</strong>
+                                <p>Собственный отдел производственного контроля обеспечивает высокое качество всей выпускаемой продукции.</p>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </section>
                     <div class="partner-products-section">
-                        <h2>Ключевые продукты:</h2>
+                    <div class="product-types" style="display: flex; justify-content: center;">
+                        <!-- Removed the "Все" button -->
+                        <!-- <button onclick="filterProducts('all')">Все</button> -->
+                        <button onclick="filterProducts('semechki', this)" class="active">Семечки</button>
+                        <button onclick="filterProducts('chips', this)">Чипсы</button>
+                        <button onclick="filterProducts('drinks', this)">Напитки</button>
+                        <button onclick="filterProducts('makaroni', this)">Макароны</button>
+                    </div>
+                    <div class="partner-products-section">
+                        <h2 id="product-type-title"></h2>
                         <ul class="partner-products">
-                            <li class="product-card">
+                            <li class="product-card semechki">
                                 <div class="product-image-container">
-                                    <span class="product-weight">100 г</span>
-                                    <img src="../images/martin/otbornye_premium.webp" alt="Отборные PREMIUM" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                    <img src="../images/martin/semechki/otbortnie.png" alt="otbornye" class="product-image" loading="lazy">
                                 </div>
                                 <div class="product-info">
-                                    <h3 class="product-name">ОТБОРНЫЕ PREMIUM</h3>
-                                    <div class="product-details">
-                                        <p><strong>Вариант фасовки:</strong></p>
-                                        <p>100 г / 50 шт &nbsp; 200 г / 25 шт &nbsp; 300 г / 20 шт &nbsp; 500 г / 10 шт</p>
-                                        <p><strong>Фасовка:</strong> 390 x 236 x 243 мм</p>
-                                        <p><strong>Вес:</strong> 5,6 кг</p>
-                                        <p><strong>Условия хранения:</strong> 0°C - 25°C</p>
-                                        <p><strong>Срок хранения:</strong> 350 дней</p>
-                                        <p><strong>Состав:</strong> Обжаренные семена подсолнечника.</p>
-                                    </div>
-                                    <div class="product-nutrition">
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">578</span>
-                                            <span class="nutrition-label">ккал</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">20.7</span>
-                                            <span class="nutrition-label">Белки</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">52.9</span>
-                                            <span class="nutrition-label">Жиры</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">5</span>
-                                            <span class="nutrition-label">Углеводы</span>
-                                        </div>
-                                    </div>
+                                    <h3 class="product-name">Отборные Премиум</h3>
+                                    <p class="product-description">Сочные семечки с насыщенным вкусом.</p>
                                 </div>
                             </li>
-                            <li class="product-card">
+                            <li class="product-card semechki">
                                 <div class="product-image-container">
-                                    <span class="product-weight">100 г</span>
-                                    <img src="../images/martin/otbornye_premium_c_morsk_sol.webp" alt="Отборные PREMIUM с морской солью" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                    <img src="../images/martin/semechki/otbornye_premium_c_morsk_sol.webp" alt="otbornye_premium_c_morsk_sol" class="product-image" loading="lazy">
                                 </div>
                                 <div class="product-info">
-                                    <h3 class="product-name">ОТБОРНЫЕ PREMIUM С МОРСКОЙ СОЛЬЮ</h3>
-                                    <div class="product-details">
-                                        <p><strong>Вариант фасовки:</strong></p>
-                                        <p>100 г / 50 шт &nbsp; 200 г / 25 шт &nbsp; 300 г / 20 шт &nbsp; 500 г / 10 шт</p>
-                                        <p><strong>Фасовка:</strong> 390 x 236 x 243 мм</p>
-                                        <p><strong>Вес:</strong> 5,6 кг</p>
-                                        <p><strong>Условия хранения:</strong> 0°C - 25°C</p>
-                                        <p><strong>Срок хранения:</strong> 350 дней</p>
-                                        <p><strong>Состав:</strong> Обжаренные семена подсолнечника, морская соль.</p>
-                                    </div>
-                                    <div class="product-nutrition">
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">578</span>
-                                            <span class="nutrition-label">ккал</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">20.7</span>
-                                            <span class="nutrition-label">Белки</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">52.9</span>
-                                            <span class="nutrition-label">Жиры</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">5</span>
-                                            <span class="nutrition-label">Углеводы</span>
-                                        </div>
-                                    </div>
+                                    <h3 class="product-name">Отборные Премиум с морской солью</h3>
+                                    <p class="product-description">Солёные семечки для настоящих гурманов.</p>
                                 </div>
                             </li>
-                            <li class="product-card">
+                            <li class="product-card semechki">
                                 <div class="product-image-container">
-                                    <span class="product-weight">100 г</span>
-                                    <img src="../images/martin/polosatye_supersolenye.webp" alt="Полосатые суперсоленые" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                    <img src="../images/martin/semechki/polosatie.jpg" alt="polosatye_s_solu" class="product-image" loading="lazy">
                                 </div>
                                 <div class="product-info">
-                                    <h3 class="product-name">ПОЛОСАТЫЕ СУПЕРСОЛЕНЫЕ</h3>
-                                    <div class="product-details">
-                                        <p><strong>Вариант фасовки:</strong></p>
-                                        <p>100 г / 50 шт &nbsp; 200 г / 25 шт &nbsp; 300 г / 20 шт &nbsp; 500 г / 10 шт</p>
-                                        <p><strong>Фасовка:</strong> 390 x 236 x 243 мм</p>
-                                        <p><strong>Вес:</strong> 5,6 кг</p>
-                                        <p><strong>Условия хранения:</strong> 0°C - 25°C</p>
-                                        <p><strong>Срок хранения:</strong> 350 дней</p>
-                                        <p><strong>Состав:</strong> Обжаренные семена подсолнечника, морская соль.</p>
-                                    </div>
-                                    <div class="product-nutrition">
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">578</span>
-                                            <span class="nutrition-label">ккал</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">20.7</span>
-                                            <span class="nutrition-label">Белки</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">52.9</span>
-                                            <span class="nutrition-label">Жиры</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">5</span>
-                                            <span class="nutrition-label">Углеводы</span>
-                                        </div>
-                                    </div>
+                                    <h3 class="product-name">Полосатые с солью</h3>
+                                    <p class="product-description">Полосатые семечки с солью.</p>
                                 </div>
                             </li>
-                            <li class="product-card">
+                            <li class="product-card semechki">
                                 <div class="product-image-container">
-                                    <span class="product-weight">100 г</span>
-                                    <img src="../images/martin/sour_cream_and_onion.webp" alt="Сметана и лук" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                    <img src="../images/martin/semechki/tykvennye_s_solu.png" alt="tykvennye_s_solu" class="product-image" loading="lazy">
                                 </div>
                                 <div class="product-info">
-                                    <h3 class="product-name">СМЕТАНА И ЛУК</h3>
-                                    <div class="product-details">
-                                        <p><strong>Вариант фасовки:</strong></p>
-                                        <p>100 г / 50 шт &nbsp; 200 г / 25 шт &nbsp; 300 г / 20 шт &nbsp; 500 г / 10 шт</p>
-                                        <p><strong>Фасовка:</strong> 390 x 236 x 243 мм</p>
-                                        <p><strong>Вес:</strong> 5,6 кг</p>
-                                        <p><strong>Условия хранения:</strong> 0°C - 25°C</p>
-                                        <p><strong>Срок хранения:</strong> 350 дней</p>
-                                        <p><strong>Состав:</strong> Обжаренные семена подсолнечника, вкусоароматическая добавка (сметана и лук).</p>
-                                    </div>
-                                    <div class="product-nutrition">
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">578</span>
-                                            <span class="nutrition-label">ккал</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">20.7</span>
-                                            <span class="nutrition-label">Белки</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">52.9</span>
-                                            <span class="nutrition-label">Жиры</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">5</span>
-                                            <span class="nutrition-label">Углеводы</span>
-                                        </div>
-                                    </div>
+                                    <h3 class="product-name">Тыквенные семечки с солью</h3>
+                                    <p class="product-description">Тыквенные семечки с солью.</p>
                                 </div>
                             </li>
-                            <li class="product-card">
+                            <li class="product-card drinks" style="margin-top: 0px;">
                                 <div class="product-image-container">
-                                    <span class="product-weight">100 г</span>
-                                    <img src="../images/martin/suhariki_martin_syr.webp" alt="Сухарики Мартин Сыр" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                    <img src="../images/martin/napitki/kola.png" alt="Кола" class="product-image" loading="lazy">
                                 </div>
                                 <div class="product-info">
-                                    <h3 class="product-name">СУХАРИКИ МАРТИН СЫР</h3>
-                                    <div class="product-details">
-                                        <p><strong>Вариант фасовки:</strong></p>
-                                        <p>100 г / 50 шт</p>
-                                        <p><strong>Фасовка:</strong> 390 x 236 x 243 мм</p>
-                                        <p><strong>Вес:</strong> 5,6 кг</p>
-                                        <p><strong>Условия хранения:</strong> 0°C - 25°C</p>
-                                        <p><strong>Срок хранения:</strong> 180 дней</p>
-                                        <p><strong>Состав:</strong> Хлеб пшеничный, масло растительное, соль, сырный порошок, специи.</p>
-                                    </div>
-                                    <div class="product-nutrition">
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">420</span>
-                                            <span class="nutrition-label">ккал</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">10.5</span>
-                                            <span class="nutrition-label">Белки</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">18.2</span>
-                                            <span class="nutrition-label">Жиры</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">55.3</span>
-                                            <span class="nutrition-label">Углеводы</span>
-                                        </div>
-                                    </div>
+                                    <h3 class="product-name">Кола от Мартина</h3>
+                                    <p class="product-description">Освежающий напиток с классическим вкусом колы.</p>
                                 </div>
                             </li>
-                            <li class="product-card">
+                            <li class="product-card drinks">
                                 <div class="product-image-container">
-                                    <span class="product-weight">100 г</span>
-                                    <img src="../images/martin/smetana_i_zelen.webp" alt="Сметана и зелень" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                    <img src="../images/martin/napitki/dushes.webp" alt="dushes" class="product-image" loading="lazy">
                                 </div>
                                 <div class="product-info">
-                                    <h3 class="product-name">СМЕТАНА И ЗЕЛЕНЬ</h3>
-                                    <div class="product-details">
-                                        <p><strong>Вариант фасовки:</strong></p>
-                                        <p>100 г / 50 шт &nbsp; 200 г / 25 шт &nbsp; 300 г / 20 шт &nbsp; 500 г / 10 шт</p>
-                                        <p><strong>Фасовка:</strong> 390 x 236 x 243 мм</p>
-                                        <p><strong>Вес:</strong> 5,6 кг</p>
-                                        <p><strong>Условия хранения:</strong> 0°C - 25°C</p>
-                                        <p><strong>Срок хранения:</strong> 350 дней</p>
-                                        <p><strong>Состав:</strong> Обжаренные семена подсолнечника, вкусоароматическая добавка (сметана и зелень).</p>
-                                    </div>
-                                    <div class="product-nutrition">
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">578</span>
-                                            <span class="nutrition-label">ккал</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">20.7</span>
-                                            <span class="nutrition-label">Белки</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">52.9</span>
-                                            <span class="nutrition-label">Жиры</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">5</span>
-                                            <span class="nutrition-label">Углеводы</span>
-                                        </div>
-                                    </div>
+                                    <h3 class="product-name">Дюшес</h3>
+                                    <p class="product-description">Вкусный и освежающий напиток с фруктовым вкусом.</p>
                                 </div>
                             </li>
-                            <li class="product-card">
+                            <li class="product-card drinks">
                                 <div class="product-image-container">
-                                    <span class="product-weight">100 г</span>
-                                    <img src="../images/martin/chips_cheese.webp" alt="Чипсы сыр" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                    <img src="../images/martin/napitki/tarkhun.webp" alt="tarkhun" class="product-image" loading="lazy">
                                 </div>
                                 <div class="product-info">
-                                    <h3 class="product-name">ЧИПСЫ СЫР</h3>
-                                    <div class="product-details">
-                                        <p><strong>Вариант фасовки:</strong></p>
-                                        <p>100 г / 50 шт</p>
-                                        <p><strong>Фасовка:</strong> 390 x 236 x 243 мм</p>
-                                        <p><strong>Вес:</strong> 5,6 кг</p>
-                                        <p><strong>Условия хранения:</strong> 0°C - 25°C</p>
-                                        <p><strong>Срок хранения:</strong> 180 дней</p>
-                                        <p><strong>Состав:</strong> Картофель, растительное масло, соль, сырный порошок, специи.</p>
-                                    </div>
-                                    <div class="product-nutrition">
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">520</span>
-                                            <span class="nutrition-label">ккал</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">6.5</span>
-                                            <span class="nutrition-label">Белки</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">33.4</span>
-                                            <span class="nutrition-label">Жиры</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">51.2</span>
-                                            <span class="nutrition-label">Углеводы</span>
-                                        </div>
-                                    </div>
+                                    <h3 class="product-name">Тархун</h3>
+                                    <p class="product-description">Напиток с уникальным вкусом тархуна.</p>
                                 </div>
                             </li>
-                            <!-- Повторите этот блок для других продуктов -->
+                            <li class="product-card drinks">
+                                <div class="product-image-container">
+                                    <img src="../images/martin/napitki/limonad.webp" alt="Лимонад" class="product-image" loading="lazy">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-name">Лимон</h3>
+                                    <p class="product-description">Освежающий лимонад с натуральными ингредиентами.</p>
+                                </div>
+                            </li>
+                            <li class="product-card drinks">
+                                <div class="product-image-container">
+                                    <img src="../images/martin/napitki/persik.webp" alt="persik" class="product-image" loading="lazy">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-name">Персик</h3>
+                                    <p class="product-description">Освежающий лимонад с натуральными ингредиентами.</p>
+                                </div>
+                            </li>
+                            <li class="product-card chips">
+                                <div class="product-image-container">
+                                    <img src="../images/martin/chipsi/sir.png" alt="Sir" class="product-image" loading="lazy">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-name"></h3>
+                                    <p class="product-description">Чипсы с сырным вкусом.</p>
+                                </div>
+                            </li>
+                            <li class="product-card chips">
+                                <div class="product-image-container">
+                                    <img src="../images/martin/chipsi/smetana_luk.png" alt="smetana_luk" class="product-image" loading="lazy">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-name"></h3>
+                                    <p class="product-description">Чипсы со вкусом сметаны и лука.</p>
+                                </div>
+                            </li>
+                            <li class="product-card makaroni">
+                                <div class="product-image-container">
+                                    <img src="../images/martin/makaroni/perya.webp" alt="perya" class="product-image" loading="lazy">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-name">Перья №1</h3>
+                                    <p class="product-description">Макароны с уникальной формой.</p>
+                                </div>
+                            </li>
+                            <li class="product-card makaroni">
+                                <div class="product-image-container">
+                                    <img src="../images/martin/makaroni/rakushki.webp" alt="rakushki" class="product-image" loading="lazy">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-name">Ракушки №1</h3>
+                                    <p class="product-description">Макароны в форме ракушек.</p>
+                                </div>
+                            </li>
+                            <li class="product-card makaroni">
+                                <div class="product-image-container">
+                                    <img src="../images/martin/makaroni/spiral.webp" alt="spiral" class="product-image" loading="lazy">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-name"> Спираль №1</h3>
+                                    <p class="product-description">Спиральные макароны для разнообразия блюд.</p>
+                                </div>
+                            </li>
+                            <li class="product-card makaroni">
+                                <div class="product-image-container">
+                                    <img src="../images/martin/makaroni/rojki-skobochki.png" alt="Rosjki Skobochki" class="product-image" loading="lazy">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-name">Рожки Скобочки</h3>
+                                    <p class="product-description">Нежные макароны в форме скобочек.</p>
+                                </div>
+                            </li>
                         </ul>
                     </div>
-                    <p class="partnership-duration">Партнер Afzuni с 2015 года</p>
                 </div>
             </section>
         </main>
+        <script>
+            // Call filterProducts on page load to show only "Семечки"
+            window.onload = function() {
+                filterProducts('semechki');
+            };
+        </script>
         <footer>
             <div class="container">
                 <p>&copy; 2024 Afzuni. Все права защищены.</p>
@@ -314,6 +334,39 @@
         </footer>
     </div>
 
-    <script src="../main.js"></script>
+    <script src="path/to/your/js/f0i1l02e.js"></script>
+    <script>
+        function filterProducts(type, button) {
+            const products = document.querySelectorAll('.product-card');
+            const titleElement = document.getElementById('product-type-title');
+            const buttons = document.querySelectorAll('.product-types button');
+
+            // Скрываем или показываем продукты
+            products.forEach(product => {
+                if (type === 'all' || product.classList.contains(type)) {
+                    product.style.display = 'block'; // Показываем продукт
+                } else {
+                    product.style.display = 'none'; // Скрываем продукт
+                }
+            });
+
+            // Обновляем заголовок на русском языке без двоеточия
+            const titles = {
+                semechki: '',
+                chips: '',
+                drinks: '',
+                makaroni: '',
+                all: ''
+            };
+            titleElement.textContent = titles[type] || '';
+
+            // Убираем класс active у всех кнопок и добавляем к нажатой
+            buttons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            // Анимация кнопки
+            $(button).animate({ opacity: 0.5 }, 200).animate({ opacity: 1 }, 200);
+        }
+    </script>
 </body>
 </html>
