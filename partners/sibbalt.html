@@ -3,9 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Воронцовские - Партнер Afzuni</title>
+    <title>Дядя Ваня - Партнер Afzuni</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* Button styles */
+        .product-types button {
+            background-color: #007BFF; /* Blue background */
+            color: white; /* White text */
+            border: none; /* No border */
+            padding: 10px 20px; /* Padding for the button */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s; /* Smooth transition */
+        }
+
+        .product-types button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        .product-types button.active {
+            background-color: #0056b3; /* Active button color */
+            color: white; /* White text */
+        }
+
+        .product-image {
+            max-height: 400px; /* Установите желаемую максимальную высоту */
+            object-fit: contain; /* Сохраняет пропорции изображения */
+        }
+
+        .partner-products {
+            display: flex;
+            flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+            justify-content: center; /* Центрирует элементы по горизонтали */
+        }
+
+        .product-card {
+            margin: 10px; /* Отступы между карточками */
+            flex: 0 1 200px; /* Устанавливает базовую ширину карточек */
+            text-align: center; /* Центрирует текст внутри карточки */
+        }
+
+        /* Уменьшение высоты изображений */
+        .product-image {
+            max-height: 200px; /* Установите желаемую максимальную высоту */
+            object-fit: contain; /* Сохраняет пропорции изображения */
+        }
+    </style>
 </head>
 <body>
     <div class="content-wrapper">
@@ -32,88 +77,60 @@
             <section class="partner-page">
                 <div class="container">
                     <div class="partner-info-header" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-                        <a href="https://sibbalt.com" target="_blank" rel="noopener noreferrer" style="text-align: center;">
-                            <img src="../images/sibbalt.png" alt="Логотип Sibbalt" style="max-width: 100%; height: auto;" loading="lazy">
+                        <h1 style="text-align: center;"></h1>
+                    </div>
+                    <div style="text-align: center;">
+                        <a href="https://sibbalt.com" target="_blank" rel="noopener noreferrer">
+                            <img src="../images/sibbalt.png" alt="Логотип Дядя Ваня" style="max-width: 100%; height: auto;" loading="lazy">
                         </a>
-                        <h1></h1>
                     </div>
                     <p class="partner-description">
-                        Компания Sibbalt – один из лидеров на рынке снеков в Сибирском и Уральском федеральных округах. Собственное производство, опытные сотрудники и контроль качества на каждом этапе производства позволяют компании выпускать более 1500 тонн продукции в год и успешно работать в 65 регионах России и странах ближнего зарубежья.
+                        МИССИЯ КОМПАНИИ МАКСИМАЛЬНОЕ УДОВЛЕТВОРЕНИЕ ПОТРЕБНОСТИ ЛЮДЕЙ В ВЫСОКОКАЧЕСТВЕННЫХ И ДОСТУПНЫХ СНЕКАХ 
                     </p>
                     <div class="partner-products-section">
-                        <h2>Продукция:</h2>
+                        <div class="product-types" style="display: flex; justify-content: center;">
+                        </div>
+                        <h2 id="product-type-title"></h2>
                         <ul class="partner-products">
-                            <li class="product-card">
+                            <li class="product-card konservs">
                                 <div class="product-image-container">
-                                    <span class="product-weight">50 г / 100 г</span>
-                                    <img src="../images/sibbalt/SMETANA-I-ZELEN.png" alt="Чипсы «Драйв» со вкусом сметаны и лука" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                    <img src="../images/sibbalt/drive_s_vkusom_tajskogo_perca_50g.png" alt="Чипсы  Drive со вкусом Тайского перца 50гр" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
                                 </div>
                                 <div class="product-info">
-                                    <h3 class="product-name">Чипсы «Драйв»<br>со вкусом сметаны и лука</h3>
-                                    <p class="product-description">Тонкие, хрустящие пластины чипсов «Драйв» в отличие от обычных чипсов сразу тают во рту. Такие чипсы прекрасно подойдут в качестве закуски к различным напиткам и быстро утолят легкий голод.</p>
-                                    <div class="product-details">
-                                        <p><strong>Варианты фасовки:</strong></p>
-                                        <ul>
-                                            <li>50 г / 42 шт в упаковке</li>
-                                            <li>100 г / 25 шт в упаковке</li>
-                                        </ul>
-                                    </div>
+                                    <h3 class="product-name">Чипсы  Drive со вкусом Тайского перца 50гр</h3>
+                                    <p class="product-description">Чипсы  Drive со вкусом Тайского перца.</p>
                                 </div>
                             </li>
-                            <li class="product-card">
+                            <li class="product-card konservs">
                                 <div class="product-image-container">
-                                    <span class="product-weight">50 г / 100 г</span>
-                                    <img src="../images/sibbalt/barbekyu.png" alt="Чипсы «Драйв» со вкусом барбекю" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                    <img src="../images/sibbalt/drive_smetany_i_syra_50g.png" alt="Чипсы Drive Сметаны и сыра 50гр" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
                                 </div>
                                 <div class="product-info">
-                                    <h3 class="product-name">Чипсы «Драйв»<br>со вкусом барбекю</h3>
-                                    <p class="product-description">Тонкие, хрустящие, прекрасно подойдут в качестве закуски к различным напиткам и быстро утолят легкий голод.</p>
-                                    <div class="product-details">
-                                        <p><strong>Варианты фасовки:</strong></p>
-                                        <ul>
-                                            <li>50 г / 42 шт в упаковке</li>
-                                            <li>100 г / 25 шт в упаковке</li>
-                                        </ul>
-                                    </div>
+                                    <h3 class="product-name">Чипсы Drive Сметаны и сыра 50гр</h3>
+                                    <p class="product-description">Чипсы Drive Сметаны и сыра.</p>
                                 </div>
                             </li>
-                            <li class="product-card">
+                            <li class="product-card konservs">
                                 <div class="product-image-container">
-                                    <span class="product-weight">50 г / 100 г</span>
-                                    <img src="../images/sibbalt/KUROCHKA-GRIL.png" alt="Чипсы «Драйв» со вкусом курочки-гриль" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                    <img src="../images/sibbalt/drive_smetany_i_loka_50g.png" alt="Чипсы Drive Сметаны и лука 50гр" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
                                 </div>
                                 <div class="product-info">
-                                    <h3 class="product-name">Чипсы «Драйв»<br>со вкусом курочки-гриль</h3>
-                                    <p class="product-description">Тонкие, хрустящие пластины чипсов «Драйв» в отличие от обычных чипсов сразу тают во рту. Такие чипсы прекрасно подойдут в качестве закуски к различным напиткам и быстро утолят легкий голод.</p>
-                                    <div class="product-details">
-                                        <p><strong>Варианты фасовки:</strong></p>
-                                        <ul>
-                                            <li>50 г / 42 шт в упаковке</li>
-                                            <li>100 г / 25 шт в упаковке</li>
-                                        </ul>
-                                    </div>
+                                    <h3 class="product-name">Чипсы Drive Сметаны и лука 50гр</h3>
+                                    <p class="product-description">Чипсы Drive Сметаны и лука.</p>
                                 </div>
                             </li>
-                            <li class="product-card">
+                            <li class="product-card konservs">
                                 <div class="product-image-container">
-                                    <span class="product-weight">50 г / 100 г</span>
-                                    <img src="../images/sibbalt/smetana-i-syr.png" alt="Чипсы «Драйв» со вкусом сметаны и сыра" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                    <img src="../images/sibbalt/drive_kurochki_gryl_50g.png" alt="Чипсы Drive Курочки-гриль 50гр" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
                                 </div>
                                 <div class="product-info">
-                                    <h3 class="product-name">Чипсы «Драйв»<br>со вкусом сметаны и сыра</h3>
-                                    <p class="product-description">Тонкие, хрустящие пластины чипсов «Драйв» в отличие от обычных чипсов сразу тают во рту. Такие чипсы прекрасно подойдут в качестве закуски к различным напиткам и быстро утолят легкий голод.</p>
-                                    <div class="product-details">
-                                        <p><strong>Варианты фасовки:</strong></p>
-                                        <ul>
-                                            <li>50 г / 42 шт в упаковке</li>
-                                            <li>100 г / 25 шт в упаковке</li>
-                                        </ul>
-                                    </div>
+                                    <h3 class="product-name">Чипсы Drive Курочки-гриль 50гр</h3>
+                                    <p class="product-description">Чипсы Drive Курочки-гриль.</p>
                                 </div>
                             </li>
                         </ul>
                     </div>
-                    <p class="partnership-duration">Партнер Afzuni с 2024 года</p>
+                    <p class="partnership-duration">Партнер Afzuni с 2018 года</p>
                 </div>
             </section>
         </main>
@@ -130,5 +147,36 @@
     </div>
 
     <script src="../main.js"></script>
+    <script>
+        // Call filterProducts on page load to show only "Огурцы"
+        window.onload = function() {
+            filterProducts('konservs');
+        };
+
+        function filterProducts(type, button) {
+            const products = document.querySelectorAll('.product-card');
+            const titleElement = document.getElementById('product-type-title');
+            const buttons = document.querySelectorAll('.product-types button');
+
+            // Скрываем или показываем продукты
+            products.forEach(product => {
+                if (type === 'all' || product.classList.contains(type)) {
+                    product.style.display = 'block'; // Показываем продукт
+                } else {
+                    product.style.display = 'none'; // Скрываем продукт
+                }
+            });
+
+            // Обновляем заголовок
+            const titles = {
+                all: ''
+            };
+            titleElement.textContent = titles[type] || '';
+
+            // Убираем класс active у всех кнопок и добавляем к нажатой
+            buttons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+        }
+    </script>
 </body>
 </html>

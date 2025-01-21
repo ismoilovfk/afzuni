@@ -6,6 +6,51 @@
     <title>Дядя Ваня - Партнер Afzuni</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* Button styles */
+        .product-types button {
+            background-color: #007BFF; /* Blue background */
+            color: white; /* White text */
+            border: none; /* No border */
+            padding: 10px 20px; /* Padding for the button */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s; /* Smooth transition */
+        }
+
+        .product-types button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        .product-types button.active {
+            background-color: #0056b3; /* Active button color */
+            color: white; /* White text */
+        }
+
+        .product-image {
+            max-height: 400px; /* Установите желаемую максимальную высоту */
+            object-fit: contain; /* Сохраняет пропорции изображения */
+        }
+
+        .partner-products {
+            display: flex;
+            flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+            justify-content: center; /* Центрирует элементы по горизонтали */
+        }
+
+        .product-card {
+            margin: 10px; /* Отступы между карточками */
+            flex: 0 1 200px; /* Устанавливает базовую ширину карточек */
+            text-align: center; /* Центрирует текст внутри карточки */
+        }
+
+        /* Уменьшение высоты изображений */
+        .product-image {
+            max-height: 200px; /* Установите желаемую максимальную высоту */
+            object-fit: contain; /* Сохраняет пропорции изображения */
+        }
+    </style>
 </head>
 <body>
     <div class="content-wrapper">
@@ -32,225 +77,200 @@
             <section class="partner-page">
                 <div class="container">
                     <div class="partner-info-header" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-                        <a href="https://dyadya-vanya.ru" target="_blank" rel="noopener noreferrer" style="text-align: center;">
+                        <h1 style="text-align: center;"></h1>
+                    </div>
+                    <div style="text-align: center;">
+                        <a href="https://dyadya-vanya.ru" target="_blank" rel="noopener noreferrer">
                             <img src="../images/vanya.png" alt="Логотип Дядя Ваня" style="max-width: 100%; height: auto;" loading="lazy">
                         </a>
-                        <h1></h1>
                     </div>
                     <p class="partner-description">
-                        Дядя Ваня - один из крупнейших производителей консервированных овощей и соусов в России. Компания известна своим высоким качеством продукции и широким ассортиментом.
+                        Дядя Ваня создали бренд, несущий в себе фундаментальные ценности каждого из нас – это семья, традиции и вера, забота о дорогих и близких людях, душевность и доброжелательность.
+                    </p>
+                        Где бы ты ни был, чем бы ты ни занимался, Дядя Ваня может однажды проснуться в каждом и сказать:
+                    <p>
+                     «Время вернуться домой!»
                     </p>
                     <div class="partner-products-section">
-                        <h2>Ключевые продукты:</h2>
+                        <div class="product-types" style="display: flex; justify-content: center;">
+                            <button onclick="filterProducts('konservs', this)" class="active">Овощные консервы </button>
+                            <button onclick="filterProducts('peas', this)">Закуски и соусы</button>
+                            <button onclick="filterProducts('corn', this)">Икра и готовые блюда</button>
+                            <button onclick="filterProducts('kukuruza', this)">Кукуруза, горошек и прочее</button>
+                        </div>
+                        <h2 id="product-type-title"></h2>
                         <ul class="partner-products">
-                            <li class="product-card">
+                            <li class="product-card konservs">
                                 <div class="product-image-container">
-                                    <span class="product-weight">1800 мл</span>
-                                    <img src="../images/dyadya-vanya/ogurchiki-marinovannie-1800.jpg" alt="Огурцы маринованные" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                    <img src="../images/dyadya-vanya/ogurciki_po_berlinski_680гр.png" alt="Огурчики по-берлински" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
                                 </div>
                                 <div class="product-info">
-                                    <h3 class="product-name">Огурцы маринованные</h3>
-                                    <p class="product-description">Классический вариант маринада. Приготовлены из отборных грунтовых волгоградских огурчиков.</p>
-                                    <div class="product-details">
-                                        <p><strong>Вариант фасовки:</strong></p>
-                                        <p>1800 мл / 6 шт</p>
-                                        <p><strong>Штрихкод:</strong> 4607002991358</p>
-                                        <p><strong>Условия хранения:</strong> от 0°C до +25°С пр относительной влажности воздуха не более 75%</p>
-                                        <p><strong>После вскрытия:</strong> хранить в холодильнике при температуре от +2°С до +6°С не более 3-х суток</p>
-                                        <p><strong>Срок хранения:</strong> 24 месяца</p>
-                                        <p><strong>Состав:</strong> огурцы свежие, вода очищенная, сахар, зелень укропа, соль, регулятор кислотности - уксусная кислота ледяная, семена горчицы, чеснок</p>
-                                    </div>
-                                    <div class="product-nutrition">
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">12</span>
-                                            <span class="nutrition-label">ккал</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">51</span>
-                                            <span class="nutrition-label">кДж</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">3.0</span>
-                                            <span class="nutrition-label">Углеводы</span>
-                                        </div>
-                                    </div>
+                                    <h3 class="product-name">Дядя Ваня_Огурчики по-берлински 680гр.</h3>
+                                    <p class="product-description">Огурчики по-берлински в жестяной банке.</p>
                                 </div>
                             </li>
-                            <li class="product-card">
+                            <li class="product-card konservs">
                                 <div class="product-image-container">
-                                    <span class="product-weight">350 г</span>
-                                    <img src="../images/dyadya-vanya/kornishony-po-berlinski-350.jpg" alt="Корнишоны По-берлински" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                    <img src="../images/dyadya-vanya/kornishoni_po_franzuski_460гр.png" alt="Ассорти огурцы и томаты" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
                                 </div>
                                 <div class="product-info">
-                                    <h3 class="product-name">Корнишоны «По-берлински»</h3>
-                                    <p class="product-description">Корнишоны «по-берлински» - это то же удовольствие от фирменных гурчиков, только в мини-формате.</p>
-                                    <div class="product-details">
-                                        <p><strong>Вариант фасовки:</strong></p>
-                                        <p>350 г</p>
-                                        <p><strong>Условия хранения:</strong> хранить в сухом и прохладном месте при температуре от 0°C до +25°С и относительной влажности воздуха не более 75%</p>
-                                        <p><strong>После вскрытия:</strong> хранить в холодильнике при температуре от +2°С до +6°С не более 3-х суток</p>
-                                        <p><strong>Срок хранения:</strong> 36 месяцев</p>
-                                        <p><strong>Состав:</strong> огурцы, очищенная вода, сахар, зелень укропа, соль, регулятор кислотности: уксусная кислота ледяная, семена горчицы, лук сушеный, перец черный горошек, лавровый лист</p>
-                                    </div>
-                                    <div class="product-nutrition">
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">14</span>
-                                            <span class="nutrition-label">ккал</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">60</span>
-                                            <span class="nutrition-label">кДж</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">3.5</span>
-                                            <span class="nutrition-label">Углеводы</span>
-                                        </div>
-                                    </div>
+                                    <h3 class="product-name">Дядя Ваня_Корнишоны по-французски 460гр</h3>
+                                    <p class="product-description">Корнишоны по-французски в жестяной банке.</p>
                                 </div>
                             </li>
-                            <li class="product-card">
+                            <li class="product-card konservs">
                                 <div class="product-image-container">
-                                    <span class="product-weight">400 г</span>
-                                    <img src="../images/dyadya-vanya/goroshek-zelenyi-400.png" alt="Горошек зеленый" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                    <img src="../images/dyadya-vanya/assorti-ogurtsy-tomaty.png" alt="Ассорти огурцы и томаты" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
                                 </div>
                                 <div class="product-info">
-                                    <h3 class="product-name">Горошек зеленый</h3>
-                                    <p class="product-description">Горошек зеленый, приготовленный по ГОСТ, из мозговых сортов. Выращивается на собственных полях в Краснодарском крае.</p>
-                                    <div class="product-details">
-                                        <p><strong>Вариант фасовки:</strong></p>
-                                        <p>400 г</p>
-                                        <p><strong>Условия хранения:</strong> от 0°С до +25°С при относительной влажности воздуха не более 75%</p>
-                                        <p><strong>После вскрытия:</strong> хранить в холодильнике при температуре от +2°С до +6°С не более 1-х суток</p>
-                                        <p><strong>Срок хранения:</strong> 48 месяцев</p>
-                                        <p><strong>Состав:</strong> горох овощной свежий, вода очищенная, сахар, соль</p>
-                                    </div>
-                                    <div class="product-nutrition">
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">35</span>
-                                            <span class="nutrition-label">ккал</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">150</span>
-                                            <span class="nutrition-label">кДж</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">3.0</span>
-                                            <span class="nutrition-label">Белки</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">6.0</span>
-                                            <span class="nutrition-label">Углеводы</span>
-                                        </div>
-                                    </div>
+                                    <h3 class="product-name">Дядя Ваня_Огурчики по-берлински 680г</h3>
+                                    <p class="product-description">Огурчики по-берлински.</p>
                                 </div>
                             </li>
-                            <li class="product-card">
+                            <li class="product-card konservs">
                                 <div class="product-image-container">
-                                    <span class="product-weight">340 г</span>
-                                    <img src="../images/dyadya-vanya/kukuruza-340.jpg" alt="Кукуруза сладкая" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                    <img src="../images/dyadya-vanya/karnishoni_po_franzuski_680g.png" alt="Ассорти огурцы и томаты" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
                                 </div>
                                 <div class="product-info">
-                                    <h3 class="product-name">Кукуруза сладкая</h3>
-                                    <p class="product-description">Сладкая молочная кукуруза делается только из свежего сырья по мировым стандартам. Без консервантов.</p>
-                                    <div class="product-details">
-                                        <p><strong>Вариант фасовки:</strong></p>
-                                        <p>340 г / 12 шт</p>
-                                        <p><strong>Штрихкод:</strong> 4607002990160</p>
-                                        <p><strong>Условия хранения:</strong> от 0°С до +25°С при относительной влажности воздуха не более 75%</p>
-                                        <p><strong>После вскрытия:</strong> хранить в холодильнике при температуре (4±2)°С не более 24 часов</p>
-                                        <p><strong>Срок хранения:</strong> 48 месяцев</p>
-                                        <p><strong>Состав:</strong> кукуруза, вода, сахар, соль</p>
-                                    </div>
-                                    <div class="product-nutrition">
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">110</span>
-                                            <span class="nutrition-label">ккал</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">480</span>
-                                            <span class="nutrition-label">кДж</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">3.5</span>
-                                            <span class="nutrition-label">Белки</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">1.5</span>
-                                            <span class="nutrition-label">Жиры</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">20.0</span>
-                                            <span class="nutrition-label">Углеводы</span>
-                                        </div>
-                                    </div>
+                                    <h3 class="product-name">Дядя Ваня_Корнишоны по-французски 680г</h3>
+                                    <p class="product-description">Корнишоны по-французски.</p>
                                 </div>
                             </li>
-                            <li class="product-card">
+                            <li class="product-card konservs">
                                 <div class="product-image-container">
-                                    <span class="product-weight">1800 мл</span>
-                                    <img src="../images/dyadya-vanya/tomaty-v-tomatnom-soke-1800.jpg" alt="Томаты в томатном соке" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                    <img src="../images/dyadya-vanya/tomati_v_soke_680g.png" alt="Ассорти огурцы и томаты" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
                                 </div>
                                 <div class="product-info">
-                                    <h3 class="product-name">Томаты в томатном соке</h3>
-                                    <p class="product-description">Натуральный томатный сок и цельные помидоры. Подходит для любых блюд и закусок.</p>
-                                    <div class="product-details">
-                                        <p><strong>Вариант фасовки:</strong></p>
-                                        <p>1800 мл / 6 шт</p>
-                                        <p><strong>Штрихкод:</strong> 4607002999453</p>
-                                        <p><strong>Условия хранения:</strong> хранить в сухом и прохладном месте при температуре от 0°C до +25°С и относительной влажности воздуха не более 75%</p>
-                                        <p><strong>После вскрытия:</strong> хранить в холодильнике при температуре от +2°С до +6°С не более 1-х суток</p>
-                                        <p><strong>Срок хранения:</strong> 36 месяцев</p>
-                                        <p><strong>Состав:</strong> томаты свежие, томатный сок прямого отжима, сахар, соль, регулятор кислотности - уксусная кислота ледяная, возможны незначительные следы горчицы</p>
-                                    </div>
-                                    <div class="product-nutrition">
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">35</span>
-                                            <span class="nutrition-label">ккал</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">510</span>
-                                            <span class="nutrition-label">кДж</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">30.0</span>
-                                            <span class="nutrition-label">Углеводы</span>
-                                        </div>
-                                    </div>
+                                    <h3 class="product-name">Дядя Ваня_Томаты в томатном соке 680гр</h3>
+                                    <p class="product-description">Томаты в томатном соке.</p>
                                 </div>
                             </li>
-                            <li class="product-card">
+                            <li class="product-card konservs">
                                 <div class="product-image-container">
-                                    <span class="product-weight">1800 мл</span>
-                                    <img src="../images/dyadya-vanya/tomaty-marinovannye-1800.jpg" alt="Томаты маринованные" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                    <img src="../images/dyadya-vanya/tomati_marinovanie_680п.png" alt="Ассорти огурцы и томаты" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
                                 </div>
                                 <div class="product-info">
-                                    <h3 class="product-name">Томаты маринованные</h3>
-                                    <p class="product-description">Спелые томаты в традиционном пряном маринаде.</p>
-                                    <div class="product-details">
-                                        <p><strong>Вариант фасовки:</strong></p>
-                                        <p>1800 мл / 6 шт</p>
-                                        <p><strong>Штрихкод:</strong> 4607002991587</p>
-                                        <p><strong>Условия хранения:</strong> от 0°C до +25°С при относительной влажности воздуха не более 75%</p>
-                                        <p><strong>После вскрытия:</strong> хранить в холодильнике при температуре от +2°С до +6°С не более 1-х суток</p>
-                                        <p><strong>Срок хранения:</strong> 36 месяцев</p>
-                                        <p><strong>Состав:</strong> томаты свежие, вода очищенная, сахар, зелень укропа, соль, регулятор кислотности - уксусная кислота ледяная, чеснок сушеный, перец черный горошек, лавровый лист</p>
-                                    </div>
-                                    <div class="product-nutrition">
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">20</span>
-                                            <span class="nutrition-label">ккал</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">85</span>
-                                            <span class="nutrition-label">кДж</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">5.0</span>
-                                            <span class="nutrition-label">Углеводы</span>
-                                        </div>
-                                    </div>
+                                    <h3 class="product-name">Дядя Ваня_Томаты маринованные 680гр</h3>
+                                    <p class="product-description">Томаты маринованные.</p>
                                 </div>
                             </li>
+                            <li class="product-card peas">
+                                <div class="product-image-container">
+                                    <img src="../images/dyadya-vanya/zakusochka_po_toskanskim_460g.png" alt="Горошек зеленый жб 12х400гр" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-name">Дядя Ваня_Закусочка по-тоскански 460гр</h3>
+                                    <p class="product-description">Закусочка по-тоскански.</p>
+                                </div>
+                            </li>
+                            <li class="product-card peas">
+                                <div class="product-image-container">
+                                    <img src="../images/dyadya-vanya/zakusochka_vengerskaya_460g.png" alt="Горошек зеленый жб 12х400гр" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-name">Дядя Ваня_Закусочка венгерская 460гр</h3>
+                                    <p class="product-description">Закусочка венгерская.</p>
+                                </div>
+                            </li>
+                            <li class="product-card peas">
+                                <div class="product-image-container">
+                                    <img src="../images/dyadya-vanya/kabachki_v_adjike_po_tbilisskomu_460g.png" alt="Горошек зеленый жб 12х400гр" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-name">Дядя Ваня_Кабачки в аджике по-тбилисски 460гр</h3>
+                                    <p class="product-description">Кабачки в аджике по-тбилисски.</p>
+                                </div>
+                            </li>
+                            <li class="product-card peas">
+                                <div class="product-image-container">
+                                    <img src="../images/dyadya-vanya/adjika_domashnaya_s_chesnokom.png" alt="Горошек зеленый жб 12х400гр" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-name">Аджика Домашняя с чесноком</h3>
+                                    <p class="product-description">Аджика Домашняя с чесноком</p>
+                                </div>
+                            </li>
+                            <li class="product-card peas">
+                                <div class="product-image-container">
+                                    <img src="../images/dyadya-vanya/lecho_zakarpatskoe_680g.png" alt="Горошек зеленый жб 12х400гр" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-name">Дядя Ваня_Лечо закарпатское 680гр</h3>
+                                    <p class="product-description">Лечо закарпатское</p>
+                                </div>
+                            </li>
+                            <li class="product-card peas">
+                                <div class="product-image-container">
+                                    <img src="../images/dyadya-vanya/gorshica_russkaya_80g.png" alt="Горошек зеленый жб 12х400гр" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-name">Дядя Ваня_Горчица «Русская» 80гр</h3>
+                                    <p class="product-description">Горчица «Русская»</p>
+                                </div>
+                            </li>
+                                <li class="product-card corn">
+                                    <div class="product-image-container">
+                                        <img src="../images/dyadya-vanya/ikra_iz_kabachkov_460g.png" alt="Кукуруза сладкая" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-name">Дядя Ваня_Икра из кабачков 460гр</h3>
+                                        <p class="product-description">Икра из кабачков</p>
+                                    </div>
+                                </li>
+                                <li class="product-card corn">
+                                    <div class="product-image-container">
+                                        <img src="../images/dyadya-vanya/fasol_pechenaya_po_domashnemu_460g.png" alt="Кукуруза сладкая" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-name">Дядя Ваня_Фасоль печеная по-домашнему 460гр</h3>
+                                        <p class="product-description">Фасоль печеная по-домашнему</p>
+                                    </div>
+                                </li>   
+                                <li class="product-card corn">
+                                    <div class="product-image-container">
+                                        <img src="../images/dyadya-vanya/ikra_iz_bakljanov_po_balanskim_460g.png" alt="Кукуруза сладкая" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-name">Дядя Ваня_Икра из баклажанов по-балкански 460гр</h3>
+                                        <p class="product-description">Икра из баклажанов по-балкански</p>
+                                    </div>
+                                </li>
+                                <li class="product-card kukuruza">
+                                    <div class="product-image-container">
+                                        <img src="../images/dyadya-vanya/kukuruza_sladkayajb_340гр.png" alt="Кукуруза сладкая" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-name">Дядя Ваня_Кукуруза сладкая 340гр</h3>
+                                        <p class="product-description">Кукуруза сладкая</p>
+                                    </div>
+                                </li>
+                                <li class="product-card kukuruza">
+                                    <div class="product-image-container">
+                                        <img src="../images/dyadya-vanya/goroshek_zeleny_400g.png" alt="Кукуруза сладкая" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-name">Дядя Ваня_Горошек зеленый 400гр</h3>
+                                        <p class="product-description">Горошек зеленый</p>
+                                    </div>
+                                </li>
+                                <li class="product-card kukuruza">
+                                    <div class="product-image-container">
+                                        <img src="../images/dyadya-vanya/perec_halapenjo_350g.png" alt="Кукуруза сладкая" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-name">Дядя Ваня_Перец Халапеньо 350гр</h3>
+                                        <p class="product-description">Перец Халапеньо</p>
+                                    </div>
+                                </li>
+                                <li class="product-card kukuruza">
+                                    <div class="product-image-container">
+                                        <img src="../images/dyadya-vanya/uksus_stolovy_9_500g.png" alt="Кукуруза сладкая" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-name">Дядя Ваня_Уксус столовый 9% 500гр</h3>
+                                        <p class="product-description">Уксус столовый</p>
+                                    </div>
+                                </li>
                         </ul>
                     </div>
                     <p class="partnership-duration">Партнер Afzuni с 2018 года</p>
@@ -270,5 +290,40 @@
     </div>
 
     <script src="../main.js"></script>
+    <script>
+        // Call filterProducts on page load to show only "Огурцы"
+        window.onload = function() {
+            filterProducts('konservs');
+        };
+
+        function filterProducts(type, button) {
+            const products = document.querySelectorAll('.product-card');
+            const titleElement = document.getElementById('product-type-title');
+            const buttons = document.querySelectorAll('.product-types button');
+
+            // Скрываем или показываем продукты
+            products.forEach(product => {
+                if (type === 'all' || product.classList.contains(type)) {
+                    product.style.display = 'block'; // Показываем продукт
+                } else {
+                    product.style.display = 'none'; // Скрываем продукт
+                }
+            });
+
+            // Обновляем заголовок
+            const titles = {
+                konservs: 'Овощные консервы',
+                peas: 'Закуски и соусы',
+                corn: 'Икра и готовые блюда',
+                tomatoes: 'Кукуруза, горошек и прочее',
+                all: ''
+            };
+            titleElement.textContent = titles[type] || '';
+
+            // Убираем класс active у всех кнопок и добавляем к нажатой
+            buttons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+        }
+    </script>
 </body>
 </html>

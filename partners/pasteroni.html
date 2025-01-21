@@ -173,5 +173,36 @@
     </div>
 
     <script src="../main.js"></script>
+    <style>
+        /* Button styles */
+        .product-types button {
+            background-color: #007BFF; /* Blue background */
+            color: white; /* White text */
+            border: none; /* No border */
+            padding: 10px 20px; /* Padding for the button */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s; /* Smooth transition */
+        }
+
+        .product-types button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        .product-types button.active {
+            background-color: #0056b3; /* Active button color */
+            color: white; /* White text */
+        }
+
+
+    </style>
+
+        .product-card {
+            margin: 10px; /* Отступы между карточками */
+            flex: 0 1 200px; /* Устанавливает базовую ширину карточек */
+            text-align: center; /* Центрирует текст внутри карточки */
+        }
+
+    </style>
 </body>
 </html>

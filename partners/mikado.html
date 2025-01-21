@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Mikado - Партнер Afzuni</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* Button styles */
+        .product-types button {
+            background-color: #007BFF; /* Blue background */
+            color: white; /* White text */
+            border: none; /* No border */
+            padding: 10px 20px; /* Padding for the button */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s; /* Smooth transition */
+        }
+
+        .product-types button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        .product-types button.active {
+            background-color: #0056b3; /* Active button color */
+            color: white; /* White text */
+        }
+
+        .product-image {
+            max-height: 400px; /* Установите желаемую максимальную высоту */
+            object-fit: contain; /* Сохраняет пропорции изображения */
+        }
+
+        .partner-products {
+            display: flex;
+            flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+            justify-content: center; /* Центрирует элементы по горизонтали */
+        }
+
+        .product-card {
+            margin: 40px; /* Отступы между карточками */
+            flex: 0 2 200px; /* Устанавливает базовую ширину карточек */
+            text-align: center; /* Центрирует текст внутри карточки */
+        }
+
+        /* Уменьшение высоты изображений */
+        .product-image {
+            max-height: 200px; /* Установите желаемую максимальную высоту */
+            object-fit: contain; /* Сохраняет пропорции изображения */
+        }
+    </style>
+</head>
+<body>
+    <div class="content-wrapper">
+        <header>
+            <div class="container">
+                <div class="logo-container">
+                    <a href="../index.html" class="logo-link">
+                        <img src="../images/Afzni-logo.png" alt="Afzuni Logo" class="logo large-logo" loading="lazy">
+                        <h1></h1>
+                    </a>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="../index.html#about">О нас</a></li>
+                        <li><a href="../index.html#services">Преимущества</a></li>
+                        <li><a href="../index.html#partners">Партнеры</a></li>
+                        <li><a href="../index.html#contact">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section class="partner-page">
+                <div class="container">
+                    <div class="partner-info-header" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                        <h1 style="text-align: center;"></h1>
+                    </div>
+                    <div style="text-align: center;">
+                        <a href="http://mikado.ru" target="_blank" rel="noopener noreferrer">
+                            <img src="../images/Mikado-logo.svg" alt="Логотип Mikado" style="max-width: 100%; height: auto;" loading="lazy">
+                        </a>
+                    </div>
+                    <p class="partner-description">
+                        Компания MIKADO с более чем 50-летним опытом производства консервов предлагает широкий ассортимент продукции, включая овощи, фрукты и грибы. 
+                        Работая по европейским стандартам, она акцентирует внимание на качестве, прозрачности и честности. Продукция доступна в 18 странах
+                    </p>
+                    <div class="partner-products-section">
+                        <div class="product-types" style="display: flex; justify-content: center;">
+                            <button onclick="filterProducts('konservs', this)" class="active">Овощные консервы </button>
+                            <button onclick="filterProducts('corn', this)">Икра и готовые блюда</button>
+                        </div>
+                        <h2 id="product-type-title"></h2>
+                        <ul class="partner-products">
+                            <li class="product-card konservs">
+                                <div class="product-image-container">
+                                    <img src="../images/mikado/kornishony_370ml.png" alt="Микадо Корнишоны 370мл." class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-name">Микадо Корнишоны 370мл.</h3>
+                                    <p class="product-description">Микадо Корнишоны 370мл.</p>
+                                </div>
+                            </li>
+                            <li class="product-card konservs">
+                                <div class="product-image-container">
+                                    <img src="../images/mikado/ogurci_s_percem_halapenio_720ml.png" alt="Микадо Огурцы с перцем халапеньо 720мл." class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-name">Микадо Огурцы с перцем халапеньо 720мл.</h3>
+                                    <p class="product-description">Микадо Огурцы с перцем халапеньо 720мл.</p>
+                                </div>
+                            </li>
+                            <li class="product-card konservs">
+                                <div class="product-image-container">
+                                    <img src="../images/mikado/ogurciki_s_vishnevim_listom_720ml.png" alt="Микадо Огурчики с вишнёвым листом 720мл." class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-name">Микадо Огурчики с вишнёвым листом 720мл.</h3>
+                                    <p class="product-description">Микадо Огурчики с вишнёвым листом 720мл.</p>
+                                </div>
+                            </li>
+                            <li class="product-card konservs">
+                                <div class="product-image-container">
+                                    <img src="../images/mikado/tomati_marinovannie_720ml.png" alt="Микадо Томаты маринованные 720мл." class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-name">Микадо Томаты маринованные 720мл.</h3>
+                                    <p class="product-description">Микадо Томаты маринованные 8х720мл.</p>
+                                </div>
+                            </li>
+                            <li class="product-card konservs">
+                                <div class="product-image-container">
+                                    <img src="../images/mikado/tomati_cherri_marinovannie_720ml.png" alt="Микадо Томаты черри маринованные 720мл" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-name">Микадо Томаты черри маринованные 720мл</h3>
+                                    <p class="product-description">Микадо Томаты черри маринованные 720мл</p>
+                                </div>
+                            </li>
+                            <li class="product-card corn">
+                                <div class="product-image-container">
+                                    <img src="../images/mikado/ikra_iz_kabachkov_480ml.png" alt="Микадо Икра из кабачков 480мл" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-name">Микадо Икра из кабачков 480мл</h3>
+                                    <p class="product-description">Микадо Икра из кабачков 480мл</p>
+                                </div>
+                            </li>
+                            <li class="product-card corn">
+                                <div class="product-image-container">
+                                    <img src="../images/mikado/lecho_720ml.png" alt="Микадо Лечо 720мл" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-name">Микадо Лечо 720мл</h3>
+                                    <p class="product-description">Микадо Лечо 720мл</p>
+                                </div>
+                            </li>
+                            <li class="product-card corn">
+                                <div class="product-image-container">
+                                    <img src="../images/mikado/halapenio_rezanyy_370ml.png" alt="Микадо Халапеньо резаный 370мл" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-name">Микадо Халапеньо резаный 370мл</h3>
+                                    <p class="product-description">Микадо Халапеньо резаный 370мл</p>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <p class="partnership-duration">Партнер Afzuni с 2018 года</p>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="container">
+                <p>&copy; 2024 Afzuni. Все права защищены.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../main.js"></script>
+    <script>
+        // Call filterProducts on page load to show only "Огурцы"
+        window.onload = function() {
+            filterProducts('konservs');
+        };
+
+        function filterProducts(type, button) {
+            const products = document.querySelectorAll('.product-card');
+            const titleElement = document.getElementById('product-type-title');
+            const buttons = document.querySelectorAll('.product-types button');
+
+            // Скрываем или показываем продукты
+            products.forEach(product => {
+                if (type === 'all' || product.classList.contains(type)) {
+                    product.style.display = 'block'; // Показываем продукт
+                } else {
+                    product.style.display = 'none'; // Скрываем продукт
+                }
+            });
+
+            // Обновляем заголовок
+            const titles = {
+                konservs: 'Овощные консервы',
+                peas: 'Закуски и соусы',
+                corn: 'Икра и готовые блюда',
+                tomatoes: 'Кукуруза, горошек и прочее',
+                all: ''
+            };
+            titleElement.textContent = titles[type] || '';
+
+            // Убираем класс active у всех кнопок и добавляем к нажатой
+            buttons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+        }
+    </script>
+</body>
+</html>

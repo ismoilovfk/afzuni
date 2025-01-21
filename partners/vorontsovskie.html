@@ -3,9 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Воронцовские - Партнер Afzuni</title>
+    <title>Дядя Ваня - Партнер Afzuni</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* Button styles */
+        .product-types button {
+            background-color: #007BFF; /* Blue background */
+            color: white; /* White text */
+            border: none; /* No border */
+            padding: 10px 20px; /* Padding for the button */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s; /* Smooth transition */
+        }
+
+        .product-types button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        .product-types button.active {
+            background-color: #0056b3; /* Active button color */
+            color: white; /* White text */
+        }
+
+        .product-image {
+            max-height: 400px; /* Установите желаемую максимальную высоту */
+            object-fit: contain; /* Сохраняет пропорции изображения */
+        }
+
+        .partner-products {
+            display: flex;
+            flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+            justify-content: center; /* Центрирует элементы по горизонтали */
+        }
+
+        .product-card {
+            margin: 10px; /* Отступы между карточками */
+            flex: 0 1 200px; /* Устанавливает базовую ширину карточек */
+            text-align: center; /* Центрирует текст внутри карточки */
+        }
+
+        /* Уменьшение высоты изображений */
+        .product-image {
+            max-height: 200px; /* Установите желаемую максимальную высоту */
+            object-fit: contain; /* Сохраняет пропорции изображения */
+        }
+    </style>
 </head>
 <body>
     <div class="content-wrapper">
@@ -32,185 +77,88 @@
             <section class="partner-page">
                 <div class="container">
                     <div class="partner-info-header" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-                        <a href="https://vorontsovskie.ru" target="_blank" rel="noopener noreferrer" style="text-align: center;">
-                            <img src="../images/vorontsovskie-logo.png" alt="Логотип Воронцовские" style="max-width: 100%; height: auto;" loading="lazy">
+                        <h1 style="text-align: center;"></h1>
+                    </div>
+                    <div style="text-align: center;">
+                        <a href="https://vorontsovskie.ru" target="_blank" rel="noopener noreferrer">
+                            <img src="../images/voron.png" alt="Логотип Дядя Ваня" style="max-width: 100%; height: auto;" loading="lazy">
                         </a>
-                        <h1></h1>
                     </div>
                     <p class="partner-description">
-                        Воронцовские - российский производитель снековой продукции. Компания специализируется на производстве сухариков и гренок с различными вкусами.
-                    </p>
+                        Сухарики и гренки от Воронцовские готовятся из хлеба по особой рецептуре с натуральным маслом, оставаясь хрустящими благодаря надежной упаковке.
                     <div class="partner-products-section">
-                        <h2>Продукция:</h2>
+                        <div class="product-types" style="display: flex; justify-content: center;">
+                            <button onclick="filterProducts('konservs', this)" class="active">Сухарики </button>
+                            <button onclick="filterProducts('peas', this)">Гренки</button>
+                        </div>
+                        <h2 id="product-type-title"></h2>
                         <ul class="partner-products">
-                            <li class="product-card">
+                            <li class="product-card konservs">
                                 <div class="product-image-container">
-                                    <img src="../images/vorontsovskie/smetana-s-lukom.png" alt="Сухарики ржано-пшеничные со вкусом сметаны с луком" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                    <img src="../images/vorontsovskie/sukhariki_s_vkusom_smetana_s_lukom_40g.png" alt="Сухарики со вкусом СМЕТАНА С ЛУКОМ" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
                                 </div>
                                 <div class="product-info">
-                                    <h3 class="product-name">Сухарики ржано-пшеничные со вкусом сметаны с луком</h3>
-                                    <div class="product-details">
-                                        <p><strong>Состав:</strong> хлеб из смеси ржаной и пшеничной муки (мука ржаная обдирна, мука пшеничная хлебопекарная первого сорта, вода питьевая, соль, дрожжи хлебопекарные), масло растительное (подсолнечное), ароматизатор (соль, мальтодекстрин, лук порошок, сахар, усилители вкуса и аромата (глутамат натрия 1-замещённый, 5'-инозинат натрия 2-замещённый, 5'-гуанилат натрия 2-замещённый), молоко цельное сухое, зелень сушёная, чеснок порошок, регуляторы кислотности (лимонная кислота, молочная кислота, лактат кальция, ацетаты натрия), натуральные вкусоароматические вещества, вкусоароматические вещества, белок растительный гидролизованный (соевый), жир растительный, краситель куркумин, антислёживающий агент диоксид кремния аморфный)</p>
-                                    </div>
-                                    <div class="product-nutrition">
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">380</span>
-                                            <span class="nutrition-label">ккал</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">1590</span>
-                                            <span class="nutrition-label">кДж</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">10.0</span>
-                                            <span class="nutrition-label">Белки</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">9.0</span>
-                                            <span class="nutrition-label">Жиры</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">64.0</span>
-                                            <span class="nutrition-label">Углеводы</span>
-                                        </div>
-                                    </div>
+                                    <h3 class="product-name">Сухарики со вкусом СМЕТАНА С ЛУКОМ 40гр</h3>
+                                    <p class="product-description">Сухарики со вкусом СМЕТАНА С ЛУКОМ.</p>
                                 </div>
                             </li>
-                            <li class="product-card">
+                            <li class="product-card konservs">
                                 <div class="product-image-container">
-                                    <img src="../images/vorontsovskie/salyami.png" alt="Сухарики ржано-пшеничные со вкусом салями" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                    <img src="../images/vorontsovskie/sukhariki_s_vkusom_salami_40g.png" alt="Сухарики со вкусом САЛЯМИ" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
                                 </div>
                                 <div class="product-info">
-                                    <h3 class="product-name">Сухарики ржано-пшеничные со вкусом салями</h3>
-                                    <div class="product-details">
-                                        <p><strong>Состав:</strong> хлеб из смеси ржаной и пшеничной муки (мука ржаная обдирная, мука пшеничная хлебопекарная первого сорта, вода питьевая, соль, дрожжи хлебопекарные), масло растительное (подсолнечное), комплексная пищевая добавка вкусоароматическая (соль, мальтодекстрин, сахар, декстроза, усилители вкуса и аромата (глутамат натрия 1-замещенный, 5'-гуанилат натрия 2-замещенный, 5'-инозинат натрия 2-замещенный), вкусоароматические вещества, смесь сушеных овощей, антислеживающий агент диоксид кремния аморфный, краситель экстракт паприки, специи, регуляторы кислотности (лимонная кислота, яблочная кислота))</p>
-                                    </div>
-                                    <div class="product-nutrition">
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">390</span>
-                                            <span class="nutrition-label">ккал</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">1630</span>
-                                            <span class="nutrition-label">кДж</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">10.0</span>
-                                            <span class="nutrition-label">Белки</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">10.0</span>
-                                            <span class="nutrition-label">Жиры</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">64.0</span>
-                                            <span class="nutrition-label">Углеводы</span>
-                                        </div>
-                                    </div>
+                                    <h3 class="product-name">Сухарики со вкусом САЛЯМИ 40гр</h3>
+                                    <p class="product-description">Сухарики со вкусом САЛЯМИ.</p>
                                 </div>
                             </li>
-                            <li class="product-card">
+                            <li class="product-card konservs">
                                 <div class="product-image-container">
-                                    <img src="../images/vorontsovskie/shashlyk.png" alt="Сухарики ржано-пшеничные со вкусом шашлыка" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                    <img src="../images/vorontsovskie/sukhariki_s_vkusom_syra_80g.png" alt="Сухарики со вкусом СЫРА" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
                                 </div>
                                 <div class="product-info">
-                                    <h3 class="product-name">Сухарики ржано-пшеничные со вкусом шашлыка</h3>
-                                    <div class="product-details">
-                                        <p><strong>Состав:</strong> хлеб из смеси ржаной и пшеничной муки (мука ржаная обдирная, мука пшеничная хлебопекарная первого сорта, вода питьевая, соль, дрожжи хлебопекарные), масло растительное (подсолнечное), ароматизатор (соль, мальтодекстрин, декстроза, порошок паприки, порошок чеснока, порошок лука, усилители вкуса и аромата (глутамат натрия 1-замещенный, 5'-гуанилат натрия 2-замещенный, 5'-инозинат натрия 2-замещенный), вкусоароматические вещества, регуляторы кислотности (лимонная кислота, ацетаты натрия), специи, краситель экстракт паприки, жир растительный, антислеживающий агент диоксид кремния аморфный)</p>
-                                    </div>
-                                    <div class="product-nutrition">
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">380</span>
-                                            <span class="nutrition-label">ккал</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">1590</span>
-                                            <span class="nutrition-label">кДж</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">10.0</span>
-                                            <span class="nutrition-label">Белки</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">9.0</span>
-                                            <span class="nutrition-label">Жиры</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">65.0</span>
-                                            <span class="nutrition-label">Углеводы</span>
-                                        </div>
-                                    </div>
+                                    <h3 class="product-name">Сухарики со вкусом СЫРА 80гр</h3>
+                                    <p class="product-description">Сухарики со вкусом СЫРА.</p>
                                 </div>
                             </li>
-                            <li class="product-card">
+                            <li class="product-card konservs">
                                 <div class="product-image-container">
-                                    <img src="../images/vorontsovskie/adzhika.png" alt="Гренки ржано-пшеничные со вкусом аджики" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                    <img src="../images/vorontsovskie/sukhariki_s_vkusom_shashlyk_80g.png" alt="Сухарики со вкусом шашлыка" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
                                 </div>
                                 <div class="product-info">
-                                    <h3 class="product-name">Гренки ржано-пшеничные со вкусом аджики</h3>
-                                    <div class="product-details">
-                                        <p><strong>Состав:</strong> хлеб из смеси ржаной и пшеничной муки (мука ржаная обдирная, мука пшеничная хлебопекарная первого сорта, вода питьевая, соль, дрожжи хлебопекарные), масло растительное (подсолнечное), ароматизатор (соль, мука пшеничная, чеснок порошок, усилители вкуса и аромата (глутамат натрия 1-замещенный, 5'-гуанилат натрия 2-замещенный, 5'-инозинат натрия 2-замещенный), сахар, зелень сушёная, натуральные вкусоароматические вещества, регулятоы кислотности (ацетаты натрия, лимонная кислота), жир растительный, антислеживающий агент диоксид кремния аморфный)</p>
-                                    </div>
-                                    <div class="product-nutrition">
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">480</span>
-                                            <span class="nutrition-label">ккал</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">2010</span>
-                                            <span class="nutrition-label">кДж</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">7.0</span>
-                                            <span class="nutrition-label">Белки</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">32.0</span>
-                                            <span class="nutrition-label">Жиры</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">41.0</span>
-                                            <span class="nutrition-label">Углеводы</span>
-                                        </div>
-                                    </div>
+                                    <h3 class="product-name">Сухарики со вкусом шашлыка 80гр</h3>
+                                    <p class="product-description">Сухарики со вкусом шашлыка.</p>
                                 </div>
                             </li>
-                            <li class="product-card">
+                            <li class="product-card peas">
                                 <div class="product-image-container">
-                                    <img src="../images/vorontsovskie/kolbaski-na-grile.png" alt="Гренки ржано-пшеничные со вкусом колбасок на гриле" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                    <img src="../images/vorontsovskie/griki_s_vkusom_ostraya_paprika_60g.png" alt="Гренки со вкусом ОСТРАЯ ПАПРИКА" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
                                 </div>
                                 <div class="product-info">
-                                    <h3 class="product-name">Гренки ржано-пшеничные со вкусом колбасок на гриле</h3>
-                                    <div class="product-details">
-                                        <p><strong>Состав:</strong> хлеб из смеси ржаной и пшеничной муки (мука ржаная обдирная, мука пшеничная хлебопекарная первого сорта, вода питьевая, соль, дрожжи хлебопекарные), масло растительное (подсолнечное), комплексная пищевая добавка (соль, мальтодекстрин, декстроза, сыворотка молочная сухая, овощи сушеные (лук, чеснок), усилители вкуса и аромата (глутамат натрия 1-замещенный, 5'-Рибонуклеотиды натрия 2-замещенные), сахар, регуляторы кислотности (ацетат натрия, диацетат натрия, лимонная кислота), вкусоароматические вещества, натуральные вкусоароматические вещества, коптильный ароматизатор, антислеживающий агент диоксид кремния аморфный, краситель экстракт паприки)</p>
-                                    </div>
-                                    <div class="product-nutrition">
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">500</span>
-                                            <span class="nutrition-label">ккал</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">2090</span>
-                                            <span class="nutrition-label">кДж</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">7.0</span>
-                                            <span class="nutrition-label">Белки</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">32.0</span>
-                                            <span class="nutrition-label">Жиры</span>
-                                        </div>
-                                        <div class="nutrition-item">
-                                            <span class="nutrition-value">47.0</span>
-                                            <span class="nutrition-label">Углеводы</span>
-                                        </div>
-                                    </div>
+                                    <h3 class="product-name"> Гренки со вкусом ОСТРАЯ ПАПРИКА 60гр</h3>
+                                    <p class="product-description">Гренки со вкусом ОСТРАЯ ПАПРИКА.</p>
+                                </div>
+                            </li>
+                            <li class="product-card peas">
+                                <div class="product-image-container">
+                                    <img src="../images/vorontsovskie/griki_s_vkusom_adzhika_60g.png" alt="Гренки со вкусом АДЖИКА" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-name">Гренки со вкусом АДЖИКА 60гр</h3>
+                                    <p class="product-description">Гренки со вкусом АДЖИКА.</p>
+                                </div>
+                            </li>
+                            <li class="product-card peas">
+                                <div class="product-image-container">
+                                    <img src="../images/vorontsovskie/griki_s_vkusom_kolbaska_na_grile_60g.png" alt="Гренки со вкусом КОЛБАСКИ НА ГРИЛЕ" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-name">Гренки со вкусом КОЛБАСКИ НА ГРИЛЕ 60гр</h3>
+                                    <p class="product-description">Гренки со вкусом КОЛБАСКИ НА ГРИЛЕ.</p>
                                 </div>
                             </li>
                         </ul>
                     </div>
-                    <p class="partnership-duration">Партнер Afzuni с 2023 года</p>
+                    <p class="partnership-duration">Партнер Afzuni с 2018 года</p>
                 </div>
             </section>
         </main>
@@ -227,5 +175,38 @@
     </div>
 
     <script src="../main.js"></script>
+    <script>
+        // Call filterProducts on page load to show only "Огурцы"
+        window.onload = function() {
+            filterProducts('konservs');
+        };
+
+        function filterProducts(type, button) {
+            const products = document.querySelectorAll('.product-card');
+            const titleElement = document.getElementById('product-type-title');
+            const buttons = document.querySelectorAll('.product-types button');
+
+            // Скрываем или показываем продукты
+            products.forEach(product => {
+                if (type === 'all' || product.classList.contains(type)) {
+                    product.style.display = 'block'; // Показываем продукт
+                } else {
+                    product.style.display = 'none'; // Скрываем продукт
+                }
+            });
+
+            // Обновляем заголовок
+            const titles = {
+                konservs: 'Сухарики',
+                peas: 'Гренки',
+                all: ''
+            };
+            titleElement.textContent = titles[type] || '';
+
+            // Убираем класс active у всех кнопок и добавляем к нажатой
+            buttons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+        }
+    </script>
 </body>
 </html>
