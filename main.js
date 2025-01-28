@@ -215,3 +215,8 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+// Можно заменить alert на красивый попап
+document.querySelectorAll('.alert').forEach(alert => {
+    setTimeout(() => alert.remove(), 3000);
+});

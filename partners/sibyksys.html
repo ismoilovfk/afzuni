@@ -3,9 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Воронцовские - Партнер Afzuni</title>
+    <title>sibyksys - Партнер Afzuni</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* Button styles */
+        .product-types button {
+            background-color: #007BFF; /* Blue background */
+            color: white; /* White text */
+            border: none; /* No border */
+            padding: 10px 20px; /* Padding for the button */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s; /* Smooth transition */
+        }
+
+        .product-types button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        .product-types button.active {
+            background-color: #0056b3; /* Active button color */
+            color: white; /* White text */
+        }
+
+        .product-image {
+            max-height: 400px; /* Установите желаемую максимальную высоту */
+            object-fit: contain; /* Сохраняет пропорции изображения */
+        }
+
+        .partner-products {
+            display: flex;
+            flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+            justify-content: center; /* Центрирует элементы по горизонтали */
+            gap: 20px; /* Равномерные отступы между элементами */
+        }
+
+        .product-card {
+            margin: 0; /* Убираем внешние отступы */
+            flex: 1 1 calc(33.333% - 20px); /* Гибкая ширина для 3 колонок с учетом gap */
+            max-width: 300px; /* Максимальная ширина карточки */
+            text-align: center; /* Центрирует текст внутри карточки */
+            box-sizing: border-box; /* Учитываем padding в общей ширине */
+        }
+
+        /* Уменьшение высоты изображений */
+        .product-image {
+            max-height: 200px; /* Установите желаемую максимальную высоту */
+            object-fit: contain; /* Сохраняет пропорции изображения */
+        }
+        .partner-description {
+            font-size: 1.2em; /* Увеличенный размер шрифта */
+            font-weight: bold; /* Жирный шрифт */
+            color: #333; /* Цвет текста */
+            line-height: 1.6; /* Высота строки для лучшей читаемости */
+            margin: 20px 0; /* Отступы сверху и снизу */
+            text-align: center; /* Центрирование текста */
+        }
+    </style>
 </head>
 <body>
     <div class="content-wrapper">
@@ -32,117 +88,66 @@
             <section class="partner-page">
                 <div class="container">
                     <div class="partner-info-header" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-                        <a href="https://www.sibyksys.ru" target="_blank" rel="noopener noreferrer" style="text-align: center;">
-                            <img src="../images/sibyksys.png" alt="Логотип Сибирский Уксус" style="max-width: 100%; height: auto;" loading="lazy">
+                        <h1 style="text-align: center;"></h1>
+                    </div>
+                    <div style="text-align: center;">
+                        <a href="https://www.sibyksys.ru" target="_blank" rel="noopener noreferrer">
+                            <img src="../images/sibyksys.png" alt="Логотип Сбирикс" style="max-width: 100%; height: auto;" loading="lazy">
                         </a>
                     </div>
                     <p class="partner-description">
-                        ООО "Сибирский Уксус" - ведущий производитель уксусной продукции в Сибирском регионе. Компания специализируется на производстве широкого ассортимента уксусной продукции, натуральных сиропов и инновационных продуктов питания.
+                        Стабильность качества выпускаемой продукции обеспечивается ориентированием предприятия на современные требования к производству, внедрением Системы качества.
+                        <br>  Приоритет в  работе компании – чуткое и своевременное реагирование на потребности наших клиентов, потребителей нашей продукции. <br>
                     </p>
                     <div class="partner-products-section">
-                        <h2>Продукция:</h2>
+                        <div class="product-types" style="display: flex; justify-content: center;">
+                            <button onclick="filterProducts('uksus', this)" class="active">Уксусы</button>
+                        </div>
+                        <h2 id="product-type-title"></h2>
                         <ul class="partner-products">
-                            <li class="product-card">
+                            <li class="product-card uksus">
                                 <div class="product-image-container">
-                                    <img src="../images/sibyksys/stol.jpg" alt="Уксус столовый" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                    <img src="../images/sibyksys/Уксус «Зелёное яблоко» 6% стекло 20250мл.png" alt="Уксус столовый 9% 500гр" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
                                 </div>
                                 <div class="product-info">
-                                    <h3 class="product-name">Уксус столовый</h3>
-                                    <div class="product-details">
-                                        <p>Столовый уксус 9% – бюджетный, популярный вариант пищевой добавки, простой продукт, содержащий в своем составе уксусную кислоту и питьевую воду. Широко используется как в домашней кулинарии, так и в пищевом производстве.</p>
-                                        
-                                        <h4>Применение:</h4>
-                                        <ul>
-                                            <li>Консервирование овощей и фруктов</li>
-                                            <li>Маринование мяса, птицы, рыбы</li>
-                                            <li>Приготовление салатных заправок</li>
-                                            <li>Изготовление подливок и соусов</li>
-                                            <li>Использование в супах и выпечке</li>
-                                        </ul>
-
-                                        <h4>Фасовка:</h4>
-                                        <ul>
-                                            <li>Стеклянные бутылки 250 мл</li>
-                                            <li>Пластиковые бутылки 250 мл, 500 мл, 1000 мл</li>
-                                            <li>Промышленная тара 20-1000 кг</li>
-                                        </ul>
-
-                                        <h4>Доступные концентрации:</h4>
-                                        <ul>
-                                            <li>6%</li>
-                                            <li>9%</li>
-                                            <li>10%</li>
-                                        </ul>
-                                    </div>
+                                    <h3 class="product-name">Уксус «Зелёное яблоко» 6% стекло 20250мл</h3>
+                                    <p class="product-description">Уксус «Зелёное яблоко» 6% стекло 20250мл</p>
                                 </div>
                             </li>
-                            <li class="product-card">
+                            <li class="product-card uksus">
                                 <div class="product-image-container">
-                                    <img src="../images/sibyksys/apple6.jpg" alt="Уксус яблочный натуральный 6%" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                    <img src="../images/sibyksys/Уксус «Красное яблоко» 6% 12х500мл.PNG" alt="Уксус столовый 9% 500гр" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
                                 </div>
                                 <div class="product-info">
-                                    <h3 class="product-name">Уксус яблочный натуральный 6%</h3>
-                                    <div class="product-details">
-                                        <p>Натуральный продукт, изготовленный в соответствии с ГОСТ путем окисления сброженного натурального яблочного сока чистой культурой бактерий Acetobacter aceti. Благодаря биотехнологии сохраняет витамины, микроэлементы и аминокислоты.</p>
-                                        
-                                        <h4>Применение:</h4>
-                                        <ul>
-                                            <li>Консервирование и маринование</li>
-                                            <li>Салатные заправки</li>
-                                            <li>Приготовление горячих блюд</li>
-                                            <li>Легкие салаты из листовых зеленых овощей</li>
-                                            <li>Блюда из мяса и птицы</li>
-                                            <li>Блюда из нежирной рыбы и морепродуктов</li>
-                                        </ul>
-
-                                        <h4>Полезные свойства:</h4>
-                                        <ul>
-                                            <li>Подавляет аппетит</li>
-                                            <li>Снижает тягу к сладкому</li>
-                                            <li>Можно использовать как освежающий напиток (1-2 ч.л. на стакан воды)</li>
-                                        </ul>
-
-                                        <h4>Фасовка:</h4>
-                                        <ul>
-                                            <li>Пластиковые бутылки 250 мл</li>
-                                            <li>Пластиковые бутылки 350 мл</li>
-                                            <li>Пластиковые бутылки 500 мл</li>
-                                        </ul>
-                                    </div>
+                                    <h3 class="product-name">Уксус «Красное яблоко» 6% 12х500мл</h3>
+                                    <p class="product-description">Уксус «Красное яблоко» 6% 12х500мл</p>
                                 </div>
                             </li>
-                            <li class="product-card">
+                            <li class="product-card uksus">
                                 <div class="product-image-container">
-                                    <img src="../images/sibyksys/applegreen.jpg" alt="Уксус яблочный (зеленое яблоко)" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                    <img src="../images/sibyksys/Уксус яблочный натуральный 6% колпачок «золото» 12х350гр..png" alt="Уксус столовый 9% 500гр" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
                                 </div>
                                 <div class="product-info">
-                                    <h3 class="product-name">Уксус яблочный (зеленое яблоко)</h3>
-                                    <div class="product-details">
-                                        <p>Уксус столовый ароматизированный яблочный 6% используется для придания блюдам яблочных оттенков вкуса. Широко используется в домашней кулинарии и пищевом производстве как консервирующая добавка, ингредиент маринадов.</p>
-                                        
-                                        <h4>Применение:</h4>
-                                        <ul>
-                                            <li>Хрустящая капуста и листовые овощи</li>
-                                            <li>Выпечка (шарлотка)</li>
-                                            <li>Консервирование овощей и фруктов</li>
-                                            <li>Салатные заправки</li>
-                                            <li>Соусы</li>
-                                            <li>Десерты</li>
-                                        </ul>
-
-                                        <h4>Варианты:</h4>
-                                        <ul>
-                                            <li>Зеленое яблоко</li>
-                                            <li>Красное яблоко</li>
-                                        </ul>
-
-                                        <h4>Фасовка:</h4>
-                                        <ul>
-                                            <li>Стеклянные бутылки</li>
-                                            <li>Пластиковые бутылки</li>
-                                            <li>Промышленная тара 1-1000 кг</li>
-                                        </ul>
-                                    </div>
+                                    <h3 class="product-name">Уксус яблочный натуральный 6% колпачок «золото» 12х350гр</h3>
+                                    <p class="product-description">Уксус яблочный натуральный 6% колпачок «золото» 12х350гр</p>
+                                </div>
+                            </li>
+                            <li class="product-card uksus">
+                                <div class="product-image-container">
+                                    <img src="../images/sibyksys/Уксусная кислота 70% 30х160мл.png" alt="Уксус столовый 9% 500гр" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-name">Уксус натуральный 6% 12х500мл</h3>
+                                    <p class="product-description">Уксус натуральный 6% 12х500мл</p>
+                                </div>
+                            </li>
+                            <li class="product-card uksus">
+                                <div class="product-image-container">
+                                    <img src="../images/sibyksys/Уксусная столовый 9% 12х500мл.png" alt="Уксус столовый 9% 500гр" class="product-image" loading="lazy" onclick="openImageModal(this.src, this.alt)">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-name">Уксусная кислота 70% 30х160мл</h3>
+                                    <p class="product-description">Уксусная кислота 70% 30х160мл</p>
                                 </div>
                             </li>
                         </ul>
@@ -150,6 +155,50 @@
                 </div>
             </section>
         </main>
+        <footer>
+            <div class="container">
+                <p>&copy; 2024 Afzuni. Все права защищены.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </footer>
     </div>
+
+    <script src="../main.js"></script>
+    <script>
+        // Call filterProducts on page load to show only "Огурцы"
+        window.onload = function() {
+            filterProducts('uksus');
+        };
+
+        function filterProducts(type, button) {
+            const products = document.querySelectorAll('.product-card');
+            const titleElement = document.getElementById('product-type-title');
+            const buttons = document.querySelectorAll('.product-types button');
+
+            // Скрываем или показываем продукты
+            products.forEach(product => {
+                if (type === 'all' || product.classList.contains(type)) {
+                    product.style.display = 'block'; // Показываем продукт
+                } else {
+                    product.style.display = 'none'; // Скрываем продукт
+                }
+            });
+
+            // Обновляем заголовок
+            const titles = {
+                uksus: 'Уксусы',
+                all: ''
+            };
+            titleElement.textContent = titles[type] || '';
+
+            // Убираем класс active у всех кнопок и добавляем к нажатой
+            buttons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+        }
+    </script>
 </body>
 </html>
