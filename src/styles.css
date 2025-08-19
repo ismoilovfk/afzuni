@@ -1,4 +1,4 @@
-:root{--bg:#0b0d12;--card:#0f131a;--muted:#94a3b8;--text:#e6edf3;--primary:#6ee7b7;--primary-ink:#0b2b22;--ring:#1f2937;--shadow:0 10px 30px rgba(0,0,0,.35)}
+:root{--bg:#0b0d12;--card:#0f131a;--muted:#9aa7bd;--text:#e6edf3;--primary:#22d3ee;--secondary:#a78bfa;--primary-ink:#07262a;--ring:#273244;--shadow:0 18px 50px rgba(0,0,0,.45)}
 *{box-sizing:border-box}
 html,body,#root{height:100%}
 body{margin:0;background:radial-gradient(1200px 600px at 80% -10%,rgba(110,231,183,.08),transparent 50%),radial-gradient(800px 400px at 10% 10%,rgba(110,231,183,.08),transparent 50%),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;}
@@ -15,11 +15,13 @@ body{margin:0;background:radial-gradient(1200px 600px at 80% -10%,rgba(110,231,1
 
 .hero{position:relative;min-height:72vh;display:grid;place-items:center}
 .hero-inner{text-align:center;padding:80px 0}
-.hero h1{font-size:clamp(32px,6vw,60px);line-height:1.05;margin:0 0 12px}
+.hero h1{font-size:clamp(36px,6.5vw,66px);line-height:1.05;margin:0 0 12px;background:linear-gradient(135deg,var(--primary),var(--secondary));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 6px 24px rgba(34,211,238,.2))}
 .hero p{color:var(--muted);font-size:clamp(16px,2.5vw,20px);margin:0 0 24px}
-.btn-primary{display:inline-block;background:linear-gradient(135deg,#34d399,#10b981);color:#05160f;border:1px solid rgba(52,211,153,.5);padding:12px 18px;border-radius:12px;font-weight:700;text-decoration:none;box-shadow:var(--shadow);transition:transform .15s ease,box-shadow .2s}
+.btn-primary{display:inline-block;background:linear-gradient(135deg,var(--secondary),var(--primary));color:#031317;border:1px solid rgba(34,211,238,.45);padding:12px 18px;border-radius:12px;font-weight:800;text-decoration:none;box-shadow:var(--shadow);transition:transform .15s ease,box-shadow .2s}
 .btn-primary:hover{transform:translateY(-2px)}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(900px 480px at 80% -10%,rgba(110,231,183,.12),transparent 45%),radial-gradient(600px 320px at 10% 10%,rgba(110,231,183,.12),transparent 45%);opacity:.5;mix-blend:screen;pointer-events:none}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(900px 480px at 80% -10%,rgba(167,139,250,.20),transparent 45%),radial-gradient(600px 320px at 10% 10%,rgba(34,211,238,.20),transparent 45%),url('images/generated/hero.svg') center/cover no-repeat;opacity:.9;mix-blend:screen;pointer-events:none;animation:glow 9s ease-in-out infinite alternate}
+
+@keyframes glow{from{opacity:.7;transform:translateY(0)}to{opacity:1;transform:translateY(-6px)}}
 
 .section{padding:64px 0;border-top:1px solid rgba(148,163,184,.08)}
 .two-col{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center}
@@ -32,9 +34,9 @@ body{margin:0;background:radial-gradient(1200px 600px at 80% -10%,rgba(110,231,1
 .card .icon{height:40px;width:40px;display:grid;place-items:center;border-radius:10px;background:var(--primary-ink);color:var(--primary);margin-bottom:8px}
 
 .logo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin-top:16px}
-.logo-card{background:rgba(2,6,23,.4);border:1px solid rgba(148,163,184,.12);border-radius:14px;display:grid;place-items:center;aspect-ratio:16/10;overflow:hidden;transition:.2s}
-.logo-card:hover{transform:translateY(-2px)}
-.logo-card img{max-width:80%;max-height:80%;object-fit:contain;filter:saturate(1.05) contrast(1.05)}
+.logo-card{background:rgba(2,6,23,.5);border:1px solid rgba(148,163,184,.18);border-radius:16px;display:grid;place-items:center;aspect-ratio:16/10;overflow:hidden;transition:transform .2s, box-shadow .2s}
+.logo-card:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(34,211,238,.22),0 0 0 1px rgba(167,139,250,.25) inset}
+.logo-card img{max-width:80%;max-height:80%;object-fit:contain;filter:saturate(1.15) contrast(1.1) drop-shadow(0 6px 18px rgba(34,211,238,.15))}
 
 .contact{display:grid;grid-template-columns:1fr 1fr;gap:24px}
 .contact .link{color:var(--text);text-decoration:none}
