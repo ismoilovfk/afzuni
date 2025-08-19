@@ -38,6 +38,9 @@ jobs:
         run: |
           if [ -f public/404.html ]; then cp public/404.html dist/404.html; fi
 
+      - name: Add .nojekyll
+        run: echo "" > dist/.nojekyll
+
       - name: Deploy to gh-pages branch
         uses: peaceiris/actions-gh-pages@v3
         with:
