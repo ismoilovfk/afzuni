@@ -8,12 +8,12 @@ const heroSvg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
   <defs>
     <radialGradient id="g1" cx="80%" cy="-10%" r="60%">
-      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.75"/>
-      <stop offset="100%" stop-color="#0b0d12" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#2563eb" stop-opacity="0.50"/>
+      <stop offset="100%" stop-color="#f4f7ff" stop-opacity="0"/>
     </radialGradient>
     <radialGradient id="g2" cx="10%" cy="10%" r="50%">
-      <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.7"/>
-      <stop offset="100%" stop-color="#0b0d12" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#f4f7ff" stop-opacity="0"/>
     </radialGradient>
     <filter id="noise" x="-20%" y="-20%" width="140%" height="140%">
       <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
@@ -23,7 +23,7 @@ const heroSvg = `<?xml version="1.0" encoding="UTF-8"?>
       </feComponentTransfer>
     </filter>
   </defs>
-  <rect width="100%" height="100%" fill="#0b0d12"/>
+  <rect width="100%" height="100%" fill="#f4f7ff"/>
   <rect width="100%" height="100%" fill="url(#g1)"/>
   <rect width="100%" height="100%" fill="url(#g2)"/>
   <rect width="100%" height="100%" filter="url(#noise)" opacity="0.08"/>
